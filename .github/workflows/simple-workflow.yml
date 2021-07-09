@@ -35,9 +35,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - name: test
-        run: echo ${{ env.ARUN_SECRET }}
-      # Runs a single command using the runners shell
+      - name: Test printing your secret (Remove this step in production)
+        run: cat $HOME/secrets/my_secret.json
+      
       - name: Run a one-line script
         run: echo Hello, world!
 
