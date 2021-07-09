@@ -52,9 +52,8 @@ jobs:
     steps:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        env: 
-          OS_V: ${{ runner.os }}
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          echo $OS_V
+          echo ${{ runner.os }}
+          echo ${{ GITHUB_WORKFLOW }}
