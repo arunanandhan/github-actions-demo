@@ -36,9 +36,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: test
-        env:
-          arun: ${{ secrets.ARUNKUMAR_SECRET }}
-        run: echo ${{ secrets.ARUNKUMAR_SECRET }}
+        run: echo ${{ env.ARUN_SECRET }}
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
