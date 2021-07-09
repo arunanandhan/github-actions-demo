@@ -28,7 +28,7 @@ jobs:
   # This workflow contains a single job called "build"
   job1:
     env:
-      JOBENV1: Available for only this env
+      JOBENV1: Available for only job1
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
