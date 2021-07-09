@@ -8,6 +8,7 @@ on:
   push:
     branches: [ main ]
   pull_request:
+    types: [assigned, unassigned]
     branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
