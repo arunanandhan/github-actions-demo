@@ -27,6 +27,7 @@ env:
 jobs:
   # This workflow contains a single job called "build"
   job1:
+    if: ${{ github.ref == 'refs/heads/main' }}
     env:
       JOBENV1: Available for only job1
     # The type of runner that the job will run on
@@ -49,6 +50,7 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
   job2:
+    if: ${{ github.ref == 'refs/heads/production' }}
     runs-on: ubuntu-20.04
     steps:
       # Runs a set of commands using the runners shell
