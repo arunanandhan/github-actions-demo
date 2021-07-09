@@ -42,4 +42,4 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          echo ${{ env.OS_V }}
+          echo $OS_V
