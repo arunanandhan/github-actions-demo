@@ -88,3 +88,10 @@ jobs:
           echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
           echo "GITHUB_SHA: ${GITHUB_SHA}"
           echo "GITHUB_REF: ${GITHUB_REF}"
+
+  job4:
+   runs-on: ubuntu-latest
+   steps:
+     - name: test
+       run: |
+         echo ${{ github.event }}
