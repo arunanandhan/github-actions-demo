@@ -44,6 +44,7 @@ jobs:
           echo $PUBLICENV1
           echo $JOBENV1
           echo $STEPENV1
+          echo ${{ secrets.ARUNKUMAR_SECRET }}
       
       - name: Run a one-line script
         run: echo Hello, world!
