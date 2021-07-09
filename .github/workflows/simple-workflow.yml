@@ -10,6 +10,8 @@ on:
   pull_request:
     types: [assigned, unassigned]
     branches: [ main ]
+  issue_comment:
+    types: [created, deleted]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
