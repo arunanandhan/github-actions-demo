@@ -56,4 +56,4 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           echo ${{ runner.os }}
-          echo ${{ GITHUB_WORKFLOW }}
+          echo $GITHUB_WORKFLOW
