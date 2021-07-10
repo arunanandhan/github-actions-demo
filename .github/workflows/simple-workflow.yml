@@ -101,3 +101,10 @@ jobs:
    steps:
      - name: test
        run: pwd
+     - name: output-input-play
+       id: output123
+       run: |
+         echo "::set-output name=my_output::Arunkumar Anandhan"
+     - name: inputgetterfromoutput
+       run: |
+         echo ${{ steps.output123.outputs.my_output }} 
