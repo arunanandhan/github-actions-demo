@@ -26,69 +26,69 @@ env:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  job1:
-    if: ${{ github.ref == 'refs/heads/main' }}
-    env:
-      JOBENV1: Available for only job1
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+#   job1:
+#     if: ${{ github.ref == 'refs/heads/main' }}
+#     env:
+#       JOBENV1: Available for only job1
+#     # The type of runner that the job will run on
+#     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+#     # Steps represent a sequence of tasks that will be executed as part of the job
+#     steps:
+#       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+#       - uses: actions/checkout@v2
       
-      - name: Env variable 3 levels (Workflow_level, job_level, step_level)
-        env:
-          STEPENV1: Available for only this step
-        run: |
-          echo $PUBLICENV1
-          echo $JOBENV1
-          echo $STEPENV1
-          echo ${{ secrets.ARUNKUMAR_SECRET }}
+#       - name: Env variable 3 levels (Workflow_level, job_level, step_level)
+#         env:
+#           STEPENV1: Available for only this step
+#         run: |
+#           echo $PUBLICENV1
+#           echo $JOBENV1
+#           echo $STEPENV1
+#           echo ${{ secrets.ARUNKUMAR_SECRET }}
       
-      - name: Run a one-line script
-        run: echo Hello, world!
-  job2:
-    if: ${{ github.ref == 'refs/heads/production' }}
-    runs-on: ubuntu-20.04
-    steps:
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-          echo ${{ runner.os }}
-          echo "Home: ${HOME}"
-          echo "GITHUB_WORKFLOW: ${GITHUB_WORKFLOW}"
-          echo "GITHUB_ACTIONS: ${GITHUB_ACTIONS}"
-          echo "GITHUB_ACTOR: ${GITHUB_ACTOR}"
-          echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
-          echo "GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}"
-          echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
-          echo "GITHUB_SHA: ${GITHUB_SHA}"
-          echo "GITHUB_REF: ${GITHUB_REF}"
+#       - name: Run a one-line script
+#         run: echo Hello, world!
+#   job2:
+#     if: ${{ github.ref == 'refs/heads/production' }}
+#     runs-on: ubuntu-20.04
+#     steps:
+#       # Runs a set of commands using the runners shell
+#       - name: Run a multi-line script
+#         run: |
+#           echo Add other actions to build,
+#           echo test, and deploy your project.
+#           echo ${{ runner.os }}
+#           echo "Home: ${HOME}"
+#           echo "GITHUB_WORKFLOW: ${GITHUB_WORKFLOW}"
+#           echo "GITHUB_ACTIONS: ${GITHUB_ACTIONS}"
+#           echo "GITHUB_ACTOR: ${GITHUB_ACTOR}"
+#           echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
+#           echo "GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}"
+#           echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
+#           echo "GITHUB_SHA: ${GITHUB_SHA}"
+#           echo "GITHUB_REF: ${GITHUB_REF}"
           
-  job3:
-    if: ${{ github.ref == 'refs/heads/main' }}
-    runs-on: ubuntu-20.04
-    steps:
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-          echo ${{ runner.os }}
-          echo "Home: ${HOME}"
-          echo "GITHUB_WORKFLOW: ${GITHUB_WORKFLOW}"
-          echo "GITHUB_ACTIONS: ${GITHUB_ACTIONS}"
-          echo "GITHUB_ACTOR: ${GITHUB_ACTOR}"
-          echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
-          echo "GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}"
-          echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
-          echo "GITHUB_SHA: ${GITHUB_SHA}"
-          echo "GITHUB_REF: ${GITHUB_REF}"
-          echo ${{ github.ref }}
+#   job3:
+#     if: ${{ github.ref == 'refs/heads/main' }}
+#     runs-on: ubuntu-20.04
+#     steps:
+#       # Runs a set of commands using the runners shell
+#       - name: Run a multi-line script
+#         run: |
+#           echo Add other actions to build,
+#           echo test, and deploy your project.
+#           echo ${{ runner.os }}
+#           echo "Home: ${HOME}"
+#           echo "GITHUB_WORKFLOW: ${GITHUB_WORKFLOW}"
+#           echo "GITHUB_ACTIONS: ${GITHUB_ACTIONS}"
+#           echo "GITHUB_ACTOR: ${GITHUB_ACTOR}"
+#           echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
+#           echo "GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}"
+#           echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
+#           echo "GITHUB_SHA: ${GITHUB_SHA}"
+#           echo "GITHUB_REF: ${GITHUB_REF}"
+#           echo ${{ github.ref }}
 
   job4:
    runs-on: ${{ matrix.os }}
@@ -96,8 +96,8 @@ jobs:
    strategy:
      matrix:
        os: [ubuntu-latest, windows-latest]
-#        exclude:
-#          - os: ubuntu-latest
+       exclude:
+         - os: windows-latest
    steps:
      - name: test
        run: pwd
