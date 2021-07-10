@@ -88,10 +88,13 @@ jobs:
           echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
           echo "GITHUB_SHA: ${GITHUB_SHA}"
           echo "GITHUB_REF: ${GITHUB_REF}"
+          echo ${{ github.ref }}
 
   job4:
-   runs-on: ubuntu-latest
+   runs-on: ${{ matrix.os }}
+   
+   strategy:
+     matrix:
+       os: [ubuntu-latest, windows-latest]
    steps:
      - name: test
-       run: |
-         echo ${{ github.ref }}
