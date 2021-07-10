@@ -97,7 +97,7 @@ jobs:
      matrix:
        os: [ubuntu-latest, windows-latest]
        exclude:
-         - os: windows-latest
+         - os: ubuntu-latest
    steps:
      - name: test
-       run: echo 123
+       run: pwd
