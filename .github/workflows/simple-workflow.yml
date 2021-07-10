@@ -96,8 +96,8 @@ jobs:
    strategy:
      matrix:
        os: [ubuntu-latest, windows-latest]
-       exclude:
-         - os: ubuntu-latest
+#        exclude:
+#          - os: ubuntu-latest
    steps:
      - name: test
        run: pwd
